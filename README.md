@@ -71,4 +71,8 @@ Directory: output/update/Image
 └── userdata.img -> ../../firmware/userdata.img
 ```
 ### 7. Upgrade Firmware
-[`look here`](https://www.mixtile.com/categories/upgrade-firmware/)
+
+[`Blade3`](https://www.mixtile.com/docs/blade-3-firmware-images/)
+
+[`Edge2`](https://www.mixtile.com/docs/edge-2-firmware-images/)
+
