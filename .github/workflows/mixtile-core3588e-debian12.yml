@@ -124,6 +124,7 @@ jobs:
         shell: bash
         run: |
           sed -i 's/rk3588-mixtile-core3588e/rk3588-mixtile-core3588e-nano/g' output/.config && \
+          sudo ./build.sh kernel && \
           sudo ./build.sh firmware
 
       - name: xz image nano
@@ -151,4 +152,5 @@ jobs:
       - name: Clean cache
         shell: bash
         run: sync && sudo rm -rf output && sync
+
 
