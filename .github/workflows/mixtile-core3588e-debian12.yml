@@ -149,14 +149,14 @@ jobs:
           path: ./output/update/Image/update.raw.img.xz
           if-no-files-found: error
 
-      - name: Build image nano v2_0
+      - name: Build image nano v2
         shell: bash
         run: |
-          sed -i 's/rk3588-mixtile-core3588e-nano/rk3588-mixtile-core3588e-v2_0-nano/g' output/.config && \
+          sed -i 's/rk3588-mixtile-core3588e-nano/rk3588-mixtile-core3588e-v2-nano/g' output/.config && \
           sudo ./build.sh kernel && \
           sudo ./build.sh firmware
 
-      - name: xz image nano v2_0
+      - name: xz image nano v2
         shell: bash
         run: |
           pushd ./output/update/Image && \
@@ -164,17 +164,17 @@ jobs:
           sudo xz -4 --force --quiet --threads=0 update.raw.img && \
           popd
 
-      - name: Upload RK Image image nano v2_0
+      - name: Upload RK Image image nano v2
         uses: actions/upload-artifact@v4
         with:
-          name: image-release-rockchip-format-mixtile-core3588e-nano-Debian12
+          name: image-release-rockchip-format-mixtile-core3588e-nano-v2-Debian12
           path: ./output/update/Image/update.img.xz
           if-no-files-found: error
 
-      - name: Upload RAW Image image nano v2_0
+      - name: Upload RAW Image image nano v2
         uses: actions/upload-artifact@v4
         with:
-          name: image-release-raw-format-mixtile-core3588e-nano-Debian12
+          name: image-release-raw-format-mixtile-core3588e-nano-v2-Debian12
           path: ./output/update/Image/update.raw.img.xz
           if-no-files-found: error
 
