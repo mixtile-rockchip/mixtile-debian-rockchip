@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04-larger-runner
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -181,6 +181,7 @@ jobs:
       - name: Clean cache
         shell: bash
         run: sync && sudo rm -rf output && sync
+
 
 
 
