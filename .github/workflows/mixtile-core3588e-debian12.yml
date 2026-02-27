@@ -88,7 +88,8 @@ jobs:
         shell: bash
         run: |
           repo init -u https://github.com/mixtile-rockchip/manifests.git -b rk3588-linux-6.1-rkr6 -m rk3588_linux6.1_release.xml && \
-          repo sync
+          repo sync && \
+          repo forall -c 'git lfs fetch --all && git lfs checkout'
 
       - name: Build image
         shell: bash
@@ -181,6 +182,7 @@ jobs:
       - name: Clean cache
         shell: bash
         run: sync && sudo rm -rf output && sync
+
 
 
 
